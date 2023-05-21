@@ -1,0 +1,13 @@
+
+.title {
+    position: absolute;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: white;
+    margin-left: 21.8rem;
+    margin-top: 6rem;
+}
+.burger {
+    width: 100%;
+}
