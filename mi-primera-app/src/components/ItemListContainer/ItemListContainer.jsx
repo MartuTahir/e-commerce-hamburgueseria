@@ -1,12 +1,19 @@
-const ItemListContainer = (props) => {
+import { useEffect, useState } from "react"
+import { requestData } from "../../helpers/data"
+import { ItemList } from "../ItemList/ItemList"
+
+export const ItemListContainer = () => {
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+        requestData()
+            .then((res) => {
+                setProducts(res)
+            })
+    }, [])
+    
     return (
-        <div className={props.container}>
-            <h1 className={props.styleTitle}>
-                {props.title}
-            </h1>
-            <img src={props.img} className={props.imgClass}/>
+        <div>
+            <ItemList products={products}/>
         </div>
     )
-
 }
-export default ItemListContainer;

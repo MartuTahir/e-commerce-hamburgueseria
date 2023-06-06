@@ -1,18 +1,18 @@
-import './App.css';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import Container from './components/Container/Container';
 import burger from './assets/burger.jpg';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import './App.css';
+
 function App() {
   return (
     <>
-      <Navbar></Navbar>
-      <ItemListContainer 
-        container= "container" 
-        styleTitle= "title"
-        title= "ALTA PINTA HAMBURGUESERÍA"
-        imgClass= "burger"
-        img= {burger}
-      />
+      <BrowserRouter>
+        <Navbar/>
+        <ItemListContainer/>
+      </BrowserRouter>
     </>
   )
 }

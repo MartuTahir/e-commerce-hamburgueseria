@@ -1,0 +1,51 @@
+[
+    {
+        "name": "Hamburguesa Clásica",
+        "price": 2800,
+        "id": 1,
+        "image": "./img/burger-clasica.png"
+    },
+    {
+        "name": "Hamburguesa Con Queso",
+        "price": 2900,
+        "id": 2,
+        "image": "./img/burger-queso.png",
+        "description": "Pan blanco, hamburguesa de carne, queso cheddar, mostaza y ketchup"
+    },
+    {
+        "name": "Guacamole Doble",
+        "price": 3200,
+        "id": 3,
+        "image": "./img/guacamole.png"
+    },
+    {
+        "name": "Cheddar Doble",
+        "price": 2800,
+        "id": 4,
+        "image": "./img/doble-cheddar.png"
+    },
+    {
+        "name": "Pollo Con Pepino",
+        "price": 2900,
+        "id": 5,
+        "image": "./img/pollo-pepino.png"
+    },
+    {
+        "name": "Veggie Completa",
+        "price": 2900,
+        "id": 5,
+        "image": "./img/veggie.png"
+    },
+    {
+        "name": "Jamon y Queso Doble",
+        "price": 2500,
+        "id": 6,
+        "image": "./img/jyq.png"
+    },
+    {
+        "name": "Quintuple A La Parrilla",
+        "price": 3500,
+        "id": 7,
+        "image": "./img/quintuple.png"
+    }
+]
