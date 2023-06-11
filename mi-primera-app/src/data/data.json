@@ -3,49 +3,64 @@
         "name": "Hamburguesa Clásica",
         "price": 2800,
         "id": 1,
-        "image": "./img/burger-clasica.png"
+        "image": "../img/burger-clasica.png",
+        "description": "Pan blanco, hamburguesa de carne, tomate, lechuga, mostaza y ketchup.",
+        "category": "Carne"
     },
     {
         "name": "Hamburguesa Con Queso",
         "price": 2900,
         "id": 2,
-        "image": "./img/burger-queso.png",
-        "description": "Pan blanco, hamburguesa de carne, queso cheddar, mostaza y ketchup"
+        "image": "../img/burger-queso.png",
+        "description": "Pan blanco, hamburguesa de carne, queso cheddar, mostaza y ketchup",
+        "category": "Carne"
     },
     {
         "name": "Guacamole Doble",
         "price": 3200,
         "id": 3,
-        "image": "./img/guacamole.png"
+        "image": "../img/guacamole.png",
+        "description": "Pan blanco, hamburguesa de carne, lechuga, tomate, cebolla, pepino, mayonesa y guacamole",
+        "category": "Carne"
     },
     {
         "name": "Cheddar Doble",
         "price": 2800,
         "id": 4,
-        "image": "./img/doble-cheddar.png"
+        "image": "../img/doble-cheddar.png",
+        "description": "Pan blanco, dos hamburguesas de carne, queso cheddar, cebolla, mostaza y ketchup.",
+        "category": "Carne"
     },
     {
         "name": "Pollo Con Pepino",
         "price": 2900,
         "id": 5,
-        "image": "./img/pollo-pepino.png"
+        "image": "../img/pollo-pepino.png",
+        "description": "Pan blanco, hamburguesa de pollo, cebolla, pepino y mayonesa",
+        "category": "Pollo"
     },
     {
         "name": "Veggie Completa",
         "price": 2900,
-        "id": 5,
-        "image": "./img/veggie.png"
+        "id": 6,
+        "image": "../img/veggie.png",
+        "description": "Pan blanco, medallón vegetal, lechuga, tomate, cebolla, pepinillos, ketchup y mayonesa.",
+        "category": "Vegetal"
     },
     {
         "name": "Jamon y Queso Doble",
         "price": 2500,
-        "id": 6,
-        "image": "./img/jyq.png"
+        "id": 7,
+        "image": "../img/jyq.png",
+        "description": "Pan blanco, dos hamburguesas de carne, jamon y queso",
+        "category": "Carne"
     },
     {
         "name": "Quintuple A La Parrilla",
         "price": 3500,
-        "id": 7,
-        "image": "./img/quintuple.png"
+        "id": 8,
+        "image": "../img/quintuple.png",
+        "description": "Pan blanco, 5 hamburguesas de carne, queso cheddar, panceta.",
+        "category": "Carne"
     }
 ]

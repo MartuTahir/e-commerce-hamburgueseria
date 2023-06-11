@@ -1,0 +1,1 @@
+export { Sucursales } from "./sucursales"

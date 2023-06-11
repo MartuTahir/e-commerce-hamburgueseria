@@ -5,12 +5,34 @@
     justify-content: space-between;
     align-items: center;
 }
+.category-nav {
+    display: flex;
+    height: 5rem;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1.5px solid #e9e2e2;
+    box-shadow: 0 0 0.4rem 0 #00000015;
+}
+.category-nav a {
+    color: #070707;
+    text-decoration: none;
+    transition: 0.2s;
+    width: 5rem;
+    text-align: center;
+}
+.category-nav a:hover {
+    background-color: #f5f1f1;
+    border-radius: 0.8rem;
+}
 .items a {
     font-family: 'Poppins', sans-serif;
     margin: 2rem;
     color: white;
     text-decoration: none;
     font-size: 0.9rem;
+}
+.items a.active {
+    text-decoration: underline;
 }
 .nav-toggle {
     display: none;

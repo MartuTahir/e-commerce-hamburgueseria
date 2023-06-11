@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react"
-import { requestItemId } from "../../helpers/data"
-import ItemDetail from "../ItemDetail/ItemDetail"
+import { requestItemId } from "../helpers/data"
+import ItemDetail from "./ItemDetail"
+import { useParams } from "react-router-dom"
 
-export const ItemDetailContainer = ( {itemId} ) => {
+export const ItemDetailContainer = () => {
     const [item, setItem] = useState(null)
+    const id = useParams().id
     useEffect(() => {
-        requestItemId(itemId)
+        requestItemId(Number(id))
             .then((res) => {
                 setItem(res)
             })
-    }, [itemId])
+    }, [id])
   return (
     <div>  
         {item && <ItemDetail item={item}/>}

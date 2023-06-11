@@ -4,7 +4,7 @@ export const requestData = () => {
     return new Promise ((resolve, reject) => {
         setTimeout(()=> {
             resolve(data)
-        },800)
+        },2000)
     })
 }
 
