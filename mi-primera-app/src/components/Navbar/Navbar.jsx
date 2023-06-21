@@ -15,6 +15,7 @@ const Navbar = () => {
                 </div>
                 <div className={`items ${isOpen && "open"}`}>
                     <NavLink to="/"> Inicio </NavLink>
+                    <NavLink to="/products"> Menu </NavLink>
                     <NavLink to="/sucursales"> Sucursales </NavLink>
                 </div>
                 <Cartwidget/>

@@ -1,4 +1,7 @@
 .navbar {
+    width: 100%;
+    position: fixed;
+    z-index: 3;
     display: flex;
     background-color: #070707;
     height: 6rem;
@@ -6,6 +9,7 @@
     align-items: center;
 }
 .category-nav {
+    padding-top: 6rem;
     display: flex;
     height: 5rem;
     justify-content: space-evenly;

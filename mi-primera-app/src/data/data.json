@@ -5,7 +5,8 @@
         "id": 1,
         "image": "../img/burger-clasica.png",
         "description": "Pan blanco, hamburguesa de carne, tomate, lechuga, mostaza y ketchup.",
-        "category": "Carne"
+        "category": "Carne",
+        "stock": 5
     },
     {
         "name": "Hamburguesa Con Queso",
@@ -13,7 +14,8 @@
         "id": 2,
         "image": "../img/burger-queso.png",
         "description": "Pan blanco, hamburguesa de carne, queso cheddar, mostaza y ketchup",
-        "category": "Carne"
+        "category": "Carne",
+        "stock": 5
     },
     {
         "name": "Guacamole Doble",
@@ -21,7 +23,8 @@
         "id": 3,
         "image": "../img/guacamole.png",
         "description": "Pan blanco, hamburguesa de carne, lechuga, tomate, cebolla, pepino, mayonesa y guacamole",
-        "category": "Carne"
+        "category": "Carne",
+        "stock": 5
     },
     {
         "name": "Cheddar Doble",
@@ -29,7 +32,8 @@
         "id": 4,
         "image": "../img/doble-cheddar.png",
         "description": "Pan blanco, dos hamburguesas de carne, queso cheddar, cebolla, mostaza y ketchup.",
-        "category": "Carne"
+        "category": "Carne",
+        "stock": 5
     },
     {
         "name": "Pollo Con Pepino",
@@ -37,7 +41,8 @@
         "id": 5,
         "image": "../img/pollo-pepino.png",
         "description": "Pan blanco, hamburguesa de pollo, cebolla, pepino y mayonesa",
-        "category": "Pollo"
+        "category": "Pollo",
+        "stock": 5
     },
     {
         "name": "Veggie Completa",
@@ -45,7 +50,8 @@
         "id": 6,
         "image": "../img/veggie.png",
         "description": "Pan blanco, medallón vegetal, lechuga, tomate, cebolla, pepinillos, ketchup y mayonesa.",
-        "category": "Vegetal"
+        "category": "Vegetal",
+        "stock": 5
     },
     {
         "name": "Jamon y Queso Doble",
@@ -53,7 +59,8 @@
         "id": 7,
         "image": "../img/jyq.png",
         "description": "Pan blanco, dos hamburguesas de carne, jamon y queso",
-        "category": "Carne"
+        "category": "Carne",
+        "stock": 5
     },
     {
         "name": "Quintuple A La Parrilla",
@@ -61,6 +68,7 @@
         "id": 8,
         "image": "../img/quintuple.png",
         "description": "Pan blanco, 5 hamburguesas de carne, queso cheddar, panceta.",
-        "category": "Carne"
+        "category": "Carne",
+        "stock": 5
     }
 ]
