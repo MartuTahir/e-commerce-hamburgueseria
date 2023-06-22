@@ -5,28 +5,13 @@ import { ItemDetailContainer } from './components/ItemDetailContainer';
 import './App.css';
 import { Home, Sucursales } from './pages';
 import { Footer } from './components/Footer';
-import { CartContext } from './context/CartContext';
-import { useState } from 'react';
+import { CartProvider } from './context/CartContext';
 
 function App() {
 
-  const [cart, setCart] = useState([])
-
-  const addCart = (item, quantity) => {
-    const itemAdd = {...item, quantity}
-    const newCart = [...cart]
-    const exists = newCart.find((prod) => prod.id === itemAdd.id)
-    exists ? exists.quantity += quantity : newCart.push(itemAdd)
-    setCart(newCart)
-  }
-
-  const quantityCart = () => {
-    return cart.reduce((acc, prod) => acc + prod.quantity, 0)
-  }
-
   return (
     <>
-      <CartContext.Provider value={ {cart, addCart, quantityCart} }>
+      <CartProvider>
         <BrowserRouter>
           <Navbar/>
           <Routes>
@@ -39,7 +24,7 @@ function App() {
 
           <Footer/>
         </BrowserRouter>
-      </CartContext.Provider>
+      </CartProvider>
     </>
   )
 }

@@ -5,17 +5,18 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
 import { Box, Modal, Typography } from '@mui/material';
 import { Cart } from './Cart';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Cartwidget = () => {
-    const {cart, quantityCart} = useContext(CartContext)
+    const {cart, quantityCart, totalPrice, cartClear} = useContext(CartContext)
 
-    
+
     const style = {
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 400,
+        width: 550,
         boxShadow: 24,
         p: 4,
         bgcolor: 'background.paper',
@@ -23,6 +24,9 @@ const Cartwidget = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const handleClear = () => {
+        cartClear()
+    }
 
     return (
         <>
@@ -38,16 +42,29 @@ const Cartwidget = () => {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} >
-                    <Typography id="modal-modal-title" variant="h6" component="h2">
+                    <Typography 
+                        variant="h6" 
+                        component="h2" 
+                        sx= {{fontFamily: 'Poppins, sans-serif', paddingBottom: '1rem'}}
+                    >
                         Carrito
+                        <CloseIcon className='close' onClick={handleClose}/>
                     </Typography>
-                    <div>
-                        {
-                            cart.map((prod) => {
-                            <h2>{prod.name}</h2>
-                            })
+                    <Cart/>
+                    <Typography 
+                        variant="h6" 
+                        component="h3" 
+                        sx= {{fontSize: '1.1rem', fontFamily: 'Poppins, sans-serif', marginTop: '1rem', display: 'flex'}}
+                    >
+                        { cart.length > 0 ? 
+                            <>
+                                <p>Total final: ${totalPrice()}</p>
+                                <button onClick={handleClear} className='btn-clear'>VACIAR CARRITO</button>
+                            </> :
+                            <p>El carrito esta vacio</p>
                         }
-                    </div>
+                        
+                    </Typography>
                 </Box>
         </Modal>
       </>
