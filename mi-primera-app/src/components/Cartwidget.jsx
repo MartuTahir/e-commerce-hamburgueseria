@@ -3,13 +3,14 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
-import { Box, Modal, Typography } from '@mui/material';
+import { Box,  Modal, Typography } from '@mui/material';
 import { Cart } from './Cart';
 import CloseIcon from '@mui/icons-material/Close';
+import Swal from 'sweetalert2'
 
 const Cartwidget = () => {
     const {cart, quantityCart, totalPrice, cartClear} = useContext(CartContext)
-
+    
 
     const style = {
         position: 'absolute',
@@ -24,9 +25,44 @@ const Cartwidget = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+
     const handleClear = () => {
-        cartClear()
+        Swal.fire({
+            customClass: {
+                container: 'swal-clear',
+                confirmButton: 'swal-font',
+                cancelButton: 'swal-font',
+                title: 'swal-font'
+            },
+            title: '¿Estas seguro de vaciar el carrito?',
+            toast: true,
+            icon: 'warning',
+            iconColor: '#9c27b0',
+            showCancelButton: true,
+            confirmButtonColor: '#9c27b0',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'SI',
+            cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    cartClear()
+                    Swal.fire({
+                        customClass: {
+                            container: 'swal-clear',
+                            confirmButton: 'swal-font',
+                            cancelButton: 'swal-font',
+                            title: 'swal-font'
+                        },
+                        title: 'Se vacio tu carrito',
+                        toast: true,
+                        icon: 'success',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+            })
     }
+
 
     return (
         <>
@@ -61,7 +97,7 @@ const Cartwidget = () => {
                                 <p>Total final: ${totalPrice()}</p>
                                 <button onClick={handleClear} className='btn-clear'>VACIAR CARRITO</button>
                             </> :
-                            <p>El carrito esta vacio</p>
+                            <p>Tu carrito esta vacio :(</p>
                         }
                         
                     </Typography>

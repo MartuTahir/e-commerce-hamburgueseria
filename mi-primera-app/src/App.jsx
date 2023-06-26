@@ -6,6 +6,7 @@ import './App.css';
 import { Home, Sucursales } from './pages';
 import { Footer } from './components/Footer';
 import { CartProvider } from './context/CartContext';
+import {SnackbarProvider} from 'notistack'
 
 function App() {
 
@@ -13,16 +14,18 @@ function App() {
     <>
       <CartProvider>
         <BrowserRouter>
-          <Navbar/>
-          <Routes>
-            <Route path='/' element={<Home/>}/>
-            <Route path='/sucursales' element={<Sucursales/>}/>
-            <Route path='/products' element={<ItemListContainer/>}/>
-            <Route path='/products/:category' element={<ItemListContainer/>}/>
-            <Route path='/item/:id' element={<ItemDetailContainer/>}/>
-          </Routes>
+          <SnackbarProvider maxSnack={10} autoHideDuration={2000}>
+            <Navbar/>
+            <Routes>
+              <Route path='/' element={<Home/>}/>
+              <Route path='/sucursales' element={<Sucursales/>}/>
+              <Route path='/products' element={<ItemListContainer/>}/>
+              <Route path='/products/:category' element={<ItemListContainer/>}/>
+              <Route path='/item/:id' element={<ItemDetailContainer/>}/>
+            </Routes>
 
-          <Footer/>
+            <Footer/>
+          </SnackbarProvider>
         </BrowserRouter>
       </CartProvider>
     </>
