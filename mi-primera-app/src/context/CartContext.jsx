@@ -8,13 +8,6 @@ export const CartProvider = ({children}) => {
     const [cart, setCart] = useState(initialCart)
     const [open, setOpen] = useState(false)
     
-    
-    const handleRest = (quantity, setQuantity) => {
-        quantity > 1 && setQuantity(quantity - 1)
-    }
-    const handleAdd = (item, quantity, setQuantity) => {
-        quantity < item.stock && setQuantity(quantity + 1)
-    }
 
     const addCart = (item, quantity) => {
         const itemAdd = {...item, quantity}
@@ -39,9 +32,15 @@ export const CartProvider = ({children}) => {
     const cartClear = () => {
         setCart([])
     } 
+    const [quantCart, setQuantCart] = useState(1)
+    const stateQuant = (prod) => {
+        setQuantCart(prod.quantity)
+    }
 
     const prodDelete = (prod) => {
-        return setCart(cart.filter((item) => item.id !== prod.id))
+        stateQuant(prod)
+        quantCart > 1 ? setQuantCart(quantCart - 1) : setCart(cart.filter((item) => item.id !== prod.id))
+        quantityCart()
     }
 
     useEffect(() => {
@@ -50,7 +49,7 @@ export const CartProvider = ({children}) => {
 
     return (
         <CartContext.Provider 
-            value={ {cart, addCart, quantityCart, totalPrice, cartClear, prodDelete, open, handleAdd, handleRest} }>
+            value={ {cart, addCart, quantityCart, totalPrice, cartClear, prodDelete, open, quantCart} }>
             {children}
         </CartContext.Provider>
     )

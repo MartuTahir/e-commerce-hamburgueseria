@@ -1,12 +1,25 @@
 import { useContext, useState } from "react"
-import { ItemCount } from "./ItemCount"
 import { CartContext } from "../context/CartContext"
 import { Alert, Box, Snackbar } from "@mui/material"
+import { ItemCount } from "./ItemCount"
+import Swal from "sweetalert2"
 
 const ItemDetail = ({item}) => {
 
-  const {addCart, open, handleAdd, handleRest} = useContext(CartContext)
+  const {addCart, open, quantityCart} = useContext(CartContext)
   const [quantity, setQuantity] = useState(1)
+
+  const handleRest = () => {
+    quantity > 1 && setQuantity(quantity - 1)
+    quantityCart()
+  }
+  const handleAdd = (item) => {
+      quantity < item.stock && setQuantity(quantity + 1)
+      /* if (quantity > item.stock) {
+        
+      } */
+      quantityCart()
+  }
   
 
   return (
@@ -17,10 +30,11 @@ const ItemDetail = ({item}) => {
                 <h1>{item.name}</h1>
                 <p>{item.description}</p>
                 <p className="p-detail">${item.price}</p>
+                <p>Stock disponible: {item.stock}</p>
                 <ItemCount 
                   quantity={quantity}
-                  handleAdd={() => handleAdd(item, quantity, setQuantity)}
-                  handleRest={() => handleRest(quantity, setQuantity)}
+                  handleAdd={() => handleAdd(item)}
+                  handleRest={handleRest}
                 />
                 <button className="add-cart" onClick={() => { addCart(item, quantity) }}>
                   AGREGAR AL CARRITO

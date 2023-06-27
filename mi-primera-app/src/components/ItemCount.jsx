@@ -1,5 +1,8 @@
+import { useContext, useState } from "react"
+import { CartContext } from "../context/CartContext"
 
-export const ItemCount = ({quantity, handleAdd, handleRest}) => {
+export const ItemCount = ({handleAdd, handleRest, quantity}) => {
+
   return (
     <div>
         <div className="item-count">
