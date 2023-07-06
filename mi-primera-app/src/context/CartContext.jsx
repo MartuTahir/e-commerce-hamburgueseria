@@ -32,15 +32,13 @@ export const CartProvider = ({children}) => {
     const cartClear = () => {
         setCart([])
     } 
-    const [quantCart, setQuantCart] = useState(1)
-    const stateQuant = (prod) => {
-        setQuantCart(prod.quantity)
-    }
 
     const prodDelete = (prod) => {
-        stateQuant(prod)
-        quantCart > 1 ? setQuantCart(quantCart - 1) : setCart(cart.filter((item) => item.id !== prod.id))
-        quantityCart()
+        if (prod.quantity > 1) {
+            addCart(prod, -1)
+        } else {
+            setCart(cart.filter((item) => item.id !== prod.id))
+        }
     }
 
     useEffect(() => {
@@ -49,7 +47,7 @@ export const CartProvider = ({children}) => {
 
     return (
         <CartContext.Provider 
-            value={ {cart, addCart, quantityCart, totalPrice, cartClear, prodDelete, open, quantCart} }>
+            value={ {cart, addCart, quantityCart, totalPrice, cartClear, prodDelete, open} }>
             {children}
         </CartContext.Provider>
     )

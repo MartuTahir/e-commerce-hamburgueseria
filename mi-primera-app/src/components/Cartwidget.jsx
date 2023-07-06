@@ -7,6 +7,7 @@ import { Box,  Modal, Typography } from '@mui/material';
 import { Cart } from './Cart';
 import CloseIcon from '@mui/icons-material/Close';
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom';
 
 const Cartwidget = () => {
     const {cart, quantityCart, totalPrice, cartClear} = useContext(CartContext)
@@ -96,6 +97,7 @@ const Cartwidget = () => {
                             <>
                                 <p>Total final: ${totalPrice()}</p>
                                 <button onClick={handleClear} className='btn-clear'>VACIAR CARRITO</button>
+                                <Link to="/checkout" className='btn-checkout'> FINALIZAR COMPRA </Link>
                             </> :
                             <p>Tu carrito esta vacio :(</p>
                         }

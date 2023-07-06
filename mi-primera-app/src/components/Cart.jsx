@@ -3,7 +3,7 @@ import { CartContext } from "../context/CartContext"
 import DeleteIcon from '@mui/icons-material/Delete';
 
 export const Cart = () => {
-    const {cart, prodDelete, quantCart} = useContext(CartContext)
+    const {cart, prodDelete} = useContext(CartContext)
   
   return (
     <>
@@ -17,11 +17,11 @@ export const Cart = () => {
                 <div className="flex">
                   <p className="prod-p">${prod.price}</p>
                   <p className="p-quantity">
-                    Cantidad: {quantCart} 
+                    Cantidad: {prod.quantity} 
                   </p>
                 </div>
               </div>
-              <p className="p-total">Total: ${prod.price * quantCart}</p>
+              <p className="p-total">Total: ${prod.price * prod.quantity}</p>
               <button className="btn-trash" onClick={() => prodDelete(prod)}>
                   <DeleteIcon className="trash" ></DeleteIcon>
               </button>
