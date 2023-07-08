@@ -8,7 +8,7 @@ const Item = ({product}) => {
         <h1 className="p-prod">{product.name}</h1>
         <p className="p-prod">${product.price}</p>
         <Link to={`/item/${product.id}`} className="btn-detail">
-          <VisibilityIcon sx={{marginLeft: '0.5rem'}}/>
+          <VisibilityIcon sx={{marginLeft: '0.5rem'}} className="view-btn"/>
           <p className="btn-pdetail">VER MAS</p>
         </Link>
     </div>

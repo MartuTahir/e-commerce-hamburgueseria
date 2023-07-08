@@ -15,9 +15,6 @@ const ItemDetail = ({item}) => {
   }
   const handleAdd = (item) => {
       quantity < item.stock && setQuantity(quantity + 1)
-      /* if (quantity > item.stock) {
-        
-      } */
       quantityCart()
   }
   
@@ -27,10 +24,10 @@ const ItemDetail = ({item}) => {
         <div className="detail">
             <img src={item.image} className="img-detail"/>
             <div className="container-detail">
-                <h1>{item.name}</h1>
-                <p>{item.description}</p>
+                <h1 className="title-detail">{item.name}</h1>
+                <p className="description">{item.description}</p>
                 <p className="p-detail">${item.price}</p>
-                <p>Stock disponible: {item.stock}</p>
+                <p className="stock">Stock disponible: {item.stock}</p>
                 <ItemCount 
                   quantity={quantity}
                   handleAdd={() => handleAdd(item)}
@@ -44,8 +41,11 @@ const ItemDetail = ({item}) => {
                     open={open}
                   >
                     <Alert severity="success"
-                    sx={{fontFamily:'Poppins, sans-serif', fontWeight:'600', padding:'1rem'}}
-                    >¡Producto agregado al carrito!</Alert>
+                    sx={{fontFamily:'Poppins, sans-serif', fontWeight:'600', display:'flex'}}
+                    className="alert-cart"
+                    >
+                      <p className="p-alert">¡Producto agregado al carrito!</p>
+                    </Alert>
                   </Snackbar>
                 </Box>
             </div>

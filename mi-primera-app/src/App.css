@@ -26,7 +26,7 @@ body{
     justify-content: space-evenly;
     align-items: center;
     width: 18rem;
-    height: 28rem;
+    height: 26rem;
     background: rgb(255, 255, 255);
     box-shadow: 0.1em 0.1em 0.1em #00000015;
     transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -344,8 +344,9 @@ body{
     padding-top: 5rem;
 }
 .title-form {
-    padding: 3rem;
+    padding-top: 5rem;
     font-size: 1.8rem;
+    padding-left: 2rem;
 
 }
 .form {
@@ -405,6 +406,25 @@ body{
     cursor: pointer;
     background-color: #b94dcc;
 }
+.btn-order-form{
+    margin-bottom: 13rem;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.3rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    border: none;
+    background-color: #9c27b0;
+    color: white;
+    height: 2rem;
+    width: 11.5rem;
+    transition: 0.2s;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.btn-order-form:hover {
+    cursor: pointer;
+    background-color: #b94dcc;
+}
 .container-login {
     display: flex;
     flex-direction: column;
@@ -432,11 +452,16 @@ body{
     transition: 0.2s;
     font-size: 1rem;
     font-weight: 500;
+    cursor: pointer;
+}
+.btn-login:hover {
+    cursor: pointer;
+    background-color: #b94dcc;
 }
 .flex {
     display: flex;
     justify-content: center;
-    padding-top: 5rem;
+    padding-top: 1rem;
 }
 .container-formL {
     display: flex;
@@ -449,27 +474,35 @@ body{
     color: white;
     box-shadow: 0.1em 0.1em 0.5em #00000015;
 }
-@media screen and (max-width: 548px) {
-    .flex{
-        flex-direction: column;
-        align-items: center;
-    }
-    .container-formL{
-        height: 10rem;
-        border-top-left-radius: 2rem;
-        border-top-right-radius: 2rem;
-        border-bottom-left-radius: 0;
-        width: 20rem;
-    }
-    .container-login {
-        width: 20rem;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 2rem;
-        border-bottom-left-radius: 2rem;
-        padding-top: 1rem;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
+.btn-google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    box-shadow: 0.3em 0.3em 0.5em 0.1em #00000015;
+    border-radius: 0.2rem;
+    background-color: transparent;
+    width: 13rem;
+    height: 2.5rem;
+    margin-left: 5.5rem;
+    cursor: pointer;
+}
+.g-logo {
+    width: 1.5rem;
+}
+.p-google {
+    font-family: 'Poppins', sans-serif;
+    margin-left: 0.8rem;
+    font-weight: 500;
+}
+.account {
+    color: white;
+    margin-right: 2rem;
+    padding-top: 1.8rem;
+    cursor: pointer
+}
+.btn-cart {
+    margin-bottom: 1rem;
 }
 .btn-transparent{
     font-size: 0.8rem;
@@ -482,4 +515,279 @@ body{
 }
 .btn-transparent:hover {
     cursor: pointer;
+}
+@media screen and (max-width: 548px) {
+    #loader {
+        display: block;
+        position: relative;
+        left: 60%;
+        top: 50%;
+        width: 70px;
+        height: 70px;
+        margin: -75px 0 0 -75px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #9370DB;
+        -webkit-animation: spin 2s linear infinite;
+        animation: spin 2s linear infinite;
+    }
+    #loader:after {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        border-radius: 50%;
+        border: 3px solid transparent;
+        border-top-color: #9c27b0;
+        -webkit-animation: spin 1.5s linear infinite;
+        animation: spin 1.5s linear infinite;
+    }
+    .category-nav a {
+        font-size: 0.9rem;
+    }
+    .container{
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+        padding: 1.7rem;
+        gap: 1.5rem;
+    }
+    .container-nov{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+        padding: 0.8rem;
+        gap: 2.3rem;
+    }
+    .card {
+        width: 11rem;
+        height: 16.5rem;
+    }
+    .img-prod {
+        width: auto;
+        height: 8rem;
+    }
+    .p-prod {
+        font-size: 0.75rem;
+        padding-right: 0.2rem;
+    }
+    .p-precio {
+        font-size: 0.8rem;
+    }
+    .btn-detail {
+        padding-top: 0;
+        padding-bottom: 0.5rem;
+        width: 5rem;
+        height: 1rem;
+    }
+    .title-detail {
+        font-size: 1.2rem;
+    }
+    .container-detail {
+        border-top: 1px solid rgb(202, 198, 198);
+    }
+    .img-detail{
+        padding-top: 2rem;
+        width: 60%;
+        padding-bottom: 0;
+    }
+    .btn-pdetail{
+        margin-top: 0.3rem;
+        font-size: 0.6rem;
+    }
+    .description {
+        width: 70%;
+        font-size: 0.8rem;
+    }
+    .p-detail {
+        font-size: 1rem;
+    }
+    .stock {
+        width: 30%;
+        font-size: 0.8rem;
+    }
+    .btn-count {
+        width: 1rem;
+        height: 1rem;
+    }
+    .quantity-count {
+        font-size: 0.8rem;
+    }
+    .add-cart {
+        width: 9rem;
+        height: 1.8rem;
+        font-size: 0.7rem ;
+    }
+    .view-btn {
+        width: 0.6em !important;
+        padding-bottom: 0.5rem !important;
+    }
+    .alert-cart {
+        width: 70%;
+        font-weight: 500;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .modal-cartt {
+        width: 20rem !important;
+        top: 30% !important;
+    }
+    .close{
+        margin-left: 13rem;
+    }
+    .p-total{
+        font-size: 0.9rem;
+    }
+    .cart-vac {
+        font-size: 1rem;
+    }
+    .title-shop {
+        font-size: 1.2rem !important;
+    }
+    .title-prod{
+        font-size: 0.9rem;
+        margin-left: 1rem;
+    }
+    .prod-p{
+        font-size: 0.9rem;
+    }
+    .p-quantity{
+        font-size: 0.8rem;
+    }
+    .cont-prod{
+        padding-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+    .totalFinal {
+        font-size: 0.9rem;
+    }
+    .btn-clear{
+        margin-left: 0.6rem;
+        width: 8.5rem;
+        font-size: 0.6rem;
+        height: 1.8rem;
+    }
+    .modal-user{
+        width: 70% !important;
+        left: 50% !important;
+        top: 25% !important;
+    }
+    .user{
+        font-size: 0.9rem;
+    }
+    .personIcon {
+        font-size: 2rem !important;
+    }
+    .close-sesion {
+        width: 7rem;
+        font-size: 0.8rem;
+        height: 1.6rem;
+    }
+    .btn-checkout {
+        font-size: 0.6rem;
+        padding-top: 0.3rem;
+        height: 1.5rem;
+    }
+    .flex-cart{
+        padding-top: 0;
+        flex-direction: row !important;
+        margin-left: 1rem !important;
+    }
+    .trash {
+        margin-left: 8.5rem;
+    }
+    .contain-cart {
+        border-right: none;
+    }
+    .img-cart {
+        width: 8rem;
+    }
+    .p-alert{
+        font-size: 0.8rem;
+    }
+    .home-title {
+        font-size: 1rem;
+        padding: 0.5rem;
+        padding-left: 1rem;
+    }
+    .div-nov {
+        flex-direction: column;
+        align-items: center;
+        margin-right: 1.2rem;
+    }
+    .novedad {
+        width: 12rem;
+    }
+    .img-novedad{
+        width: 100%;
+        height: 12rem;
+    }
+    .p-novedad {
+        font-size: 0.7rem;
+        width: 11rem;
+    }
+    .img-carousel {
+        padding-top: 6rem;
+        width: 100%;
+    }
+    .badge {
+        margin-top: 3rem;
+    }
+    .btn-cart {
+        margin-bottom: 4rem;
+    }
+    .account {
+        margin-right: 1rem;
+        padding-top: 4.5rem;
+    }
+    .flex{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-formL{
+        height: 8rem;
+        border-top-left-radius: 2rem;
+        border-top-right-radius: 2rem;
+        border-bottom-left-radius: 0;
+        width: 20rem;
+    }
+    .container-login {
+        width: 18rem;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        height: 22rem;
+    }
+    .password {
+        width: 18rem !important;
+    }
+    .btn-login {
+        margin-left: 4.5rem;
+        font-size: 0.9rem;
+        width: 9rem;
+        height: 2rem;
+    }
+    .btn-google {
+        margin-left: 3rem;
+        height: 2rem;
+        width: 12rem;
+    }
+    .g-logo{
+        width: 1rem;
+    }
+    .btn-transparent{
+        font-size: 0.7rem;
+        padding-right: 0;
+    }
+    .title-form{
+        padding-top: 3rem;
+        font-size: 1.5rem;
+        padding-left: 0.5rem;
+    }
+    .footer{
+        margin-top: 50%;
+    }
 }

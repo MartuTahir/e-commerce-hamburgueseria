@@ -13,8 +13,8 @@ export const Cart = () => {
             <div key={prod.id} className="cont-prod">
               <img src={prod.image} className="img-cart"/>
               <div className="contain-cart">
-                <p>{prod.name}</p>
-                <div className="flex">
+                <p className="title-prod">{prod.name}</p>
+                <div className="flex flex-cart">
                   <p className="prod-p">${prod.price}</p>
                   <p className="p-quantity">
                     Cantidad: {prod.quantity} 

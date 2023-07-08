@@ -10,11 +10,10 @@ export const Home = () => {
         <div className='div-color'>
           <h1 className='home-title'>Novedades</h1>
         </div>
-        <div className='div-nov'>
+        <div className='div-nov container-nov'>
           <div className='novedad'>
             <img src={veggies} className='img-novedad' />
-            <p className='p-novedad'>Descubri nuestras nuevas hamburguesas vegetales :)
-              Ya disponibles
+            <p className='p-novedad'>Descubri nuestras hamburguesas vegetales :)
             </p>
           </div>
           <div className='novedad'>

@@ -2,13 +2,14 @@ import { Box, FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput
 import { useState } from 'react'
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
 import Visibility from '@mui/icons-material/Visibility';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth'
-import { app }  from '../../firebase/config';
-
-const auth = getAuth(app)
+import { useAuth } from '../../context/AuthContext';
+import google from '../../assets/g-logo.png'
 
 export const Login = () => {
 
+    const auth = useAuth()
+    const [passwRegister, setPasswRegister] = useState("")
+    const [name, setName] = useState("")
     const [register, setRegister] = useState(true)
     const [email, setEmail] = useState("")
     const [error, setError] = useState({
@@ -21,16 +22,13 @@ export const Login = () => {
         return regex.test(email)
     }
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = (e) => {
         e.preventDefault()
-        const mail = e.target.email.value
-        const password = e.target.contraseña.value
-        if (register) {
-            await createUserWithEmailAndPassword(auth, mail, password)
-        } else {
-            await signInWithEmailAndPassword(auth, mail, password)
+        if (register === false) {
+            auth.login(email, passwRegister)
+        } else{
+            auth.register(email, passwRegister)
         }
-
         if (validateEmail(email)) {
             setError({
                 error: false,
@@ -42,6 +40,11 @@ export const Login = () => {
                 message: "Formato de email incorrecto"
             })
         }
+    }
+
+    const handleGoogle = (e) => {
+        e.preventDefault()
+        auth.loginWithGoogle()
     }
 
     const [showPassword, setShowPassword] = useState(false);
@@ -58,14 +61,18 @@ export const Login = () => {
             </div>
             <Box component='form'  onSubmit={handleSubmit} className='container-login'>
                 <TextField
+                    sx={{marginTop: '1rem'}}
+                    size='small'
                     id='name'
                     label='Nombre y Apellido'
                     type='text'
                     variant='outlined'
                     required
                     color='secondary'
+                    onChange={(e) => setName(e.target.value)}
                 />
                 <TextField
+                    size='small'
                     id='email'
                     label='E-mail'
                     type='email'
@@ -77,9 +84,11 @@ export const Login = () => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <FormControl sx={{ width: '25rem' }} variant="outlined">
+                <FormControl sx={{ width: '25rem', height:'2.5rem' }} variant="outlined" className='password'>
                     <InputLabel htmlFor="outlined-adornment-password" color='secondary'>Contraseña</InputLabel>
                     <OutlinedInput
+                        size='small'
+                        onChange={(e) => setPasswRegister(e.target.value)}
                         id="contraseña"
                         color='secondary'
                         type={showPassword ? 'text' : 'password'}
@@ -101,6 +110,10 @@ export const Login = () => {
                 </FormControl>
                 <button type='submit' className=' btn-login'>
                     {register ? 'Registrarme' : 'Ingresar'}
+                </button>
+                <button onClick={(e) => handleGoogle(e)} className='btn-google'>
+                    <img src={google} className='g-logo'/>
+                    <p className='p-google'>Ingresa con Google</p>
                 </button>
                 <button type='button' className='btn-transparent' onClick={() => setRegister(!register) }>
                     {register ? '¿Ya tenés una cuenta? Inicia sesión' : '¿Todavia no tenés cuenta? Registrate' }

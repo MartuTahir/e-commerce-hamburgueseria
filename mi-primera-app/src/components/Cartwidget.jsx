@@ -3,7 +3,7 @@ import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useContext, useState } from 'react';
 import { CartContext } from '../context/CartContext';
-import { Box,  Modal, Typography } from '@mui/material';
+import { Box,  Modal, Typography} from '@mui/material';
 import { Cart } from './Cart';
 import CloseIcon from '@mui/icons-material/Close';
 import Swal from 'sweetalert2'
@@ -11,14 +11,12 @@ import { Link } from 'react-router-dom';
 
 const Cartwidget = () => {
     const {cart, quantityCart, totalPrice, cartClear} = useContext(CartContext)
-    
 
     const style = {
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        width: 550,
         boxShadow: 24,
         p: 4,
         bgcolor: 'background.paper',
@@ -68,8 +66,8 @@ const Cartwidget = () => {
     return (
         <>
             <IconButton sx={{mx:'50px'}} aria-label="cart" onClick={handleOpen}>
-                <Badge badgeContent={quantityCart()} color="secondary">
-                    <ShoppingCartIcon sx={{color:"#fafafa"}} />
+                <Badge badgeContent={quantityCart()} color="secondary" className='badge'>
+                    <ShoppingCartIcon sx={{color:"#fafafa"}} className='btn-cart'/>
                 </Badge>
             </IconButton> 
             <Modal
@@ -78,11 +76,12 @@ const Cartwidget = () => {
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
             >
-                <Box sx={style} >
+                <Box sx={style} className='modal-cartt' >
                     <Typography 
                         variant="h6" 
                         component="h2" 
                         sx= {{fontFamily: 'Poppins, sans-serif', paddingBottom: '1rem'}}
+                        className='title-shop'
                     >
                         Carrito
                         <CloseIcon className='close' onClick={handleClose}/>
@@ -95,11 +94,11 @@ const Cartwidget = () => {
                     >
                         { cart.length > 0 ? 
                             <>
-                                <p>Total final: ${totalPrice()}</p>
+                                <p className='totalFinal'>Total final: ${totalPrice()}</p>
                                 <button onClick={handleClear} className='btn-clear'>VACIAR CARRITO</button>
-                                <Link to="/checkout" className='btn-checkout'> FINALIZAR COMPRA </Link>
+                                <Link to="/checkout" className='btn-checkout' onClick={handleClose}> FINALIZAR COMPRA </Link>
                             </> :
-                            <p>Tu carrito esta vacio :(</p>
+                            <p className='cart-vac'>Tu carrito esta vacio :(</p>
                         }
                         
                     </Typography>

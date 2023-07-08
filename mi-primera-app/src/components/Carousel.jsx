@@ -8,13 +8,13 @@ export const Carousel = () => {
   return (
     <Splide>
         <SplideSlide>
-            <img src={primerImg} alt="Image 1"/>
+            <img src={primerImg} alt="Image 1" className='img-carousel'/>
         </SplideSlide>
         <SplideSlide>
-            <img src={segundaImg} alt="Image 2"/>
+            <img src={segundaImg} alt="Image 2" className='img-carousel'/>
         </SplideSlide>
         <SplideSlide>
-            <img src={terceraImg} alt="Image 3"/>
+            <img src={terceraImg} alt="Image 3" className='img-carousel'/>
         </SplideSlide>
     </Splide>
   )

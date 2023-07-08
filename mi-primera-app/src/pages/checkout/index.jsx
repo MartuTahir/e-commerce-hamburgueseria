@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { CartContext } from "../../context/CartContext"
 import { useForm } from 'react-hook-form'
-import { collection, addDoc } from 'firebase/firestore'
+import { collection, addDoc} from 'firebase/firestore'
 import { db } from "../../firebase/config"
 import { Link } from "react-router-dom"
 
@@ -17,13 +17,14 @@ export const Checkout = () => {
             total: totalPrice()
         }
         console.log(order);
-
+        
         const orderRef = collection(db, "pedidos")
         addDoc(orderRef, order)
             .then((doc) => {
                 setOrderId(doc.id)
                 cartClear()
             })
+        
     }
 
     if (orderId){
@@ -40,12 +41,17 @@ export const Checkout = () => {
 
   return (
     <div className="container-form">
-        <h1 className="title-form">Tu Compra</h1>
+        <h1 className="title-form">Tu Orden</h1>
         <form className="form" onSubmit={handleSubmit(buy)}>
             <input className="input" type="text" placeholder="Nombre" {...register("name")}/>
             <input className="input" type="email" placeholder="E-mail" {...register("email")}/>
             <input className="input" type="phone" placeholder="Telefono" {...register("phone")}/>
-            <button type="submit" className="btn-form">FINALIZAR</button>
+            <div>
+                <button type="submit" className="btn-form">FINALIZAR</button>
+                <Link to="/products">
+                    <button className="btn-order-form">Seguir comprando</button>
+                </Link>
+            </div>
         </form>
     </div>
   )
