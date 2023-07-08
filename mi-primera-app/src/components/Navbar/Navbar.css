@@ -87,6 +87,7 @@
     .items.open {
         transform: translateX(0) !important;
         margin-top: 2rem;
+        height: 14rem;
     }
     .nav-toggle {
         display: flex !important;
