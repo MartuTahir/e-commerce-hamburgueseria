@@ -517,6 +517,9 @@ body{
     cursor: pointer;
 }
 @media screen and (max-width: 548px) {
+    .form {
+        padding-left: 2rem;
+    }
     #loader {
         display: block;
         position: relative;
@@ -556,7 +559,7 @@ body{
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
         padding: 0.8rem;
-        gap: 2.3rem;
+        gap: 4rem;
     }
     .card {
         width: 11rem;
@@ -662,9 +665,10 @@ body{
         font-size: 0.9rem;
     }
     .btn-clear{
-        margin-left: 0.6rem;
-        width: 8.5rem;
+        margin-left: 0;
+        width: 9rem;
         font-size: 0.6rem;
+        font-weight: 600;
         height: 1.8rem;
     }
     .modal-user{
@@ -686,6 +690,7 @@ body{
     .btn-checkout {
         font-size: 0.6rem;
         padding-top: 0.3rem;
+        font-weight: 600;
         height: 1.5rem;
     }
     .flex-cart{

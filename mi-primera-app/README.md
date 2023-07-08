@@ -68,3 +68,31 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### E-commerce de hamburguesas
+Con nombre de "Alta pinta hamburguesería", este sitio esta pensado para proyecto final del curso de React JS, con carrito funcional, autenticacion de usuarios e implementacion de base de datos de Firestore. Utilicé los siguientes recursos:
+
+- React JS
+- Material UI
+- Sweet Alert 2
+- Firebase
+- Github
+
+####Material UI
+Descargué iconos, componentes, estilos.
+
+`npm install @mui/material @emotion/react @emotion/styled`
+
+`npm install @mui/material @mui/styled-engine-sc styled-components`
+
+`npm install @mui/icons-material`
+
+####Link a repositorio
+
+`<link>` : <https://github.com/MartuTahir/e-commerce-hamburgueseria>
+
+####Recursos de Firebase
+Firestore Database, Storage, Hosting, Authentication.
+
+####Sweet Alert
+`npm install sweetalert2`

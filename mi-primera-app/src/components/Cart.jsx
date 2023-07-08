@@ -23,7 +23,7 @@ export const Cart = () => {
               </div>
               <p className="p-total">Total: ${prod.price * prod.quantity}</p>
               <button className="btn-trash" onClick={() => prodDelete(prod)}>
-                  <DeleteIcon className="trash" ></DeleteIcon>
+                  <DeleteIcon className="trash" sx={{color:'black'}}></DeleteIcon>
               </button>
             </div>
             )
