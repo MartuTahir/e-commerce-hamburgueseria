@@ -39,8 +39,8 @@ const Navbar = ({user}) => {
                     </Link>
                 </div>
                 <div className={`items ${isOpen && "open"}`}>
-                    <NavLink to="/"> Inicio </NavLink>
-                    <NavLink to="/products"> Menu </NavLink>
+                    <NavLink to="/" onClick={ () => setIsOpen(!isOpen)}> Inicio </NavLink>
+                    <NavLink to="/products" onClick={ () => setIsOpen(!isOpen)}> Menu </NavLink>
                 </div>
                 <div>
                     <Cartwidget/>

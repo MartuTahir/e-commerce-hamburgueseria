@@ -516,9 +516,22 @@ body{
 .btn-transparent:hover {
     cursor: pointer;
 }
-@media screen and (max-width: 548px) {
+
+@media (max-width: 548px) {
     .form {
-        padding-left: 2rem;
+        padding-left: 9%;
+    }
+    .input {
+        width: 80%;
+    }
+    .btn-form {
+        width: 30%;
+        font-size: 0.9rem;
+    }
+    .btn-order-form{
+        width: 50%;
+        margin-left: 1.2rem;
+        font-size: 0.9rem;
     }
     #loader {
         display: block;
@@ -790,9 +803,24 @@ body{
     .title-form{
         padding-top: 3rem;
         font-size: 1.5rem;
-        padding-left: 0.5rem;
+        padding-left: 1rem;
     }
     .footer{
         margin-top: 50%;
+    }
+    .badge {
+        margin-top: 0;
+    }
+    .css-gp21zk-MuiButtonBase-root-MuiIconButton-root {
+        margin-left: 0 !important;
+        margin-right: 1.2rem !important;
+    }
+    .btn-cart {
+        margin-bottom: 1rem;
+    }
+    .account {
+        margin-right: 0;
+        padding-top: 1rem;
+        padding-bottom: 0;
     }
 }
